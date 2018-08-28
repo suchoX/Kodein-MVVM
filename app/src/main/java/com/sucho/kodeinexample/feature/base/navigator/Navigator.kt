@@ -1,4 +1,4 @@
-package com.sucho.kodeinexample.navigator
+package com.sucho.kodeinexample.feature.base.navigator
 
 import android.app.Activity
 import android.content.Intent

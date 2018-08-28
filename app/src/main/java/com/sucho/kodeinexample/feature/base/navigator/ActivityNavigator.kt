@@ -1,7 +1,7 @@
-package com.sucho.kodeinexample.navigator
+package com.sucho.kodeinexample.feature.base.navigator
 
 import android.app.Activity
-import com.sucho.kodeinexample.navigator.Navigator
+import com.sucho.kodeinexample.feature.base.navigator.Navigator
 
 class ActivityNavigator constructor(private val activity: Activity) : Navigator() {
 
