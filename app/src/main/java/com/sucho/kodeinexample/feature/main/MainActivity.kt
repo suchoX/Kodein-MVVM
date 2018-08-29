@@ -6,6 +6,8 @@ import com.sucho.kodeinexample.databinding.MainActivityBinding
 import com.sucho.kodeinexample.feature.base.BaseActivity
 
 class MainActivity : BaseActivity<MainActivityBinding, MainViewModel>() {
+  override fun getViewModelClass(): Class<MainViewModel> = MainViewModel::class.java
+
   override fun layoutId(): Int = R.layout.activity_main
 
   override fun onCreate(savedInstanceState: Bundle?) {

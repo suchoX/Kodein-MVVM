@@ -13,6 +13,14 @@ abstract class Navigator {
     val intent = Intent(activity, activityClass)
     activity.startActivity(intent)
   }
+
+  fun startActivityAndFinish(activityClass: Class<out AppCompatActivity>) {
+    val activity = getActivity()
+    val intent = Intent(activity, activityClass)
+    activity.startActivity(intent)
+    activity.finish()
+  }
+
   fun startActivityWithAnimation(activityClass: Class<out AppCompatActivity>,
       inAnimation: Int, outAnimation: Int) {
     val activity = getActivity()

@@ -1,6 +1,7 @@
 package com.sucho.kodeinexample.utils
 
 import android.content.SharedPreferences
+import android.util.Log
 
 class PrefsUtils constructor(private val prefs: SharedPreferences) {
   companion object {
@@ -22,5 +23,9 @@ class PrefsUtils constructor(private val prefs: SharedPreferences) {
 
   fun setStoragePermissionRequested(b: Boolean) {
     prefs.edit().putBoolean(PREFS_STORAGE_PERMISSION_REQUESTED, b).apply()
+  }
+
+  fun test() {
+    Log.e("DDDD", "DDDD")
   }
 }

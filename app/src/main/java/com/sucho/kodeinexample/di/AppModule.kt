@@ -15,7 +15,7 @@ private const val MODULE_NAME = "App Module"
 
 val appModule = Module(MODULE_NAME, false) {
   bind<DataObject>() with singleton { injectDataObject() }
-  bind<PrefsUtils>() with singleton { getPrefsUtils(instance()) }
+  bind<PrefsUtils>() with singleton { getPrefsUtils(instance("ApplicationContext")) }
   bind<Resources>() with singleton { instance<CustomApplication>().resources }
 }
 

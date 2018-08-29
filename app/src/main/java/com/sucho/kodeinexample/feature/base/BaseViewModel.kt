@@ -2,8 +2,12 @@ package com.sucho.kodeinexample.feature.base
 
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.ViewModel
+import android.content.Context
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.generic.kcontext
 import timber.log.Timber
 
 abstract class BaseViewModel : ViewModel(), LifecycleObserver {
@@ -26,4 +30,5 @@ abstract class BaseViewModel : ViewModel(), LifecycleObserver {
     }
     compositeDisposable!!.add(disposable)
   }
+
 }
