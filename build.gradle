@@ -83,5 +83,4 @@ ext.deps = [archExtenstion    : "android.arch.lifecycle:extensions:$ARCH_VERSION
     mockitocore       : 'org.mockito:mockito-core:2.7.17',
 
     kodein            : "org.kodein.di:kodein-di-generic-jvm:${KODEIN_VERSION}",
-    kodeinAndroidCore : "org.kodein.di:kodein-di-framework-android-core:${KODEIN_VERSION}",
     kodeinAndroidSupport: "org.kodein.di:kodein-di-framework-android-support:${KODEIN_VERSION}"]

@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">Kodein Example</string>
+  <string name="splash_text">Kodein-MVVM</string>
+  <string name="random_joke">Random Joke</string>
 </resources>

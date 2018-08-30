@@ -24,7 +24,6 @@ abstract class BaseActivity<B : ViewDataBinding, VM : ViewModel>: AppCompatActiv
   protected lateinit var binding: B
   lateinit var viewModel: VM
 
-
   private val _parentKodein by closestKodein()
   override val kodein: Kodein by retainedKodein {
     extend(_parentKodein, copy = Copy.All)

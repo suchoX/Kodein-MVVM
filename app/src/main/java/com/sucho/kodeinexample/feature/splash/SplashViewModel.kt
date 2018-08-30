@@ -16,7 +16,6 @@ class SplashViewModel constructor(context: Context) : BaseViewModel(), KodeinAwa
   override val kodeinContext = kcontext(context)
 
   private val navigator: Navigator by instance()
-  private val prefsUtils: PrefsUtils by instance()
 
   fun gotoMainActivity() {
     Handler().postDelayed({

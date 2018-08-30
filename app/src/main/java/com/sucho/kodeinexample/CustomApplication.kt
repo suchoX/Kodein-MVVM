@@ -8,6 +8,7 @@ import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
+import timber.log.Timber
 
 class CustomApplication : Application(), KodeinAware {
   override val kodein = Kodein.lazy {
@@ -15,5 +16,13 @@ class CustomApplication : Application(), KodeinAware {
     bind<CustomApplication>() with singleton { this@CustomApplication }
     import(appModule)
     import(networkModule)
+  }
+
+  override fun onCreate() {
+    super.onCreate()
+
+    if (BuildConfig.DEBUG) {
+      Timber.plant(Timber.DebugTree())
+    }
   }
 }
