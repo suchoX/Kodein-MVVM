@@ -35,7 +35,7 @@ class MainActivity : BaseActivity<MainActivityBinding, MainViewModel>() {
 
   private fun showRandomJokeFragment(joke: String) {
     Timber.d(joke)
-    /*val fragment = RandomJokeFragment.newInstance(joke)
-    fragment.show(supportFragmentManager, "dialog")*/
+    val fragment = RandomJokeFragment.newInstance(joke)
+    fragment.show(supportFragmentManager, "dialog")
   }
 }

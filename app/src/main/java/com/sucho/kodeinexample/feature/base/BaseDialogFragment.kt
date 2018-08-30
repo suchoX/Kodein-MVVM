@@ -3,7 +3,6 @@ package com.sucho.kodeinexample.feature.base
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
@@ -16,7 +15,7 @@ import com.sucho.kodeinexample.di.fragmentModule
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.KodeinContext
-import org.kodein.di.android.closestKodein
+import org.kodein.di.android.support.closestKodein
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.kcontext
 
@@ -25,7 +24,7 @@ abstract class BaseDialogFragment<B : ViewDataBinding, VM : ViewModel> : DialogF
   lateinit var viewModel: VM
 
   override val kodeinContext: KodeinContext<*> get() = kcontext(activity)
-  private val _parentKodein by closestKodein(activity as Context) //TODO: This is crashing
+  private val _parentKodein by closestKodein()
 
   override val kodein: Kodein = Kodein.lazy {
     extend(_parentKodein)
@@ -40,6 +39,7 @@ abstract class BaseDialogFragment<B : ViewDataBinding, VM : ViewModel> : DialogF
     savedInstanceState: Bundle?
   ): View? {
     bindContentView(inflater, layoutId(), container)
+    fragmentInitialized()
     return binding.root
   }
 
@@ -51,4 +51,6 @@ abstract class BaseDialogFragment<B : ViewDataBinding, VM : ViewModel> : DialogF
   abstract fun getViewModelClass(): Class<VM>
 
   @LayoutRes protected abstract fun layoutId(): Int
+
+  abstract fun fragmentInitialized()
 }
