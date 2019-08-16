@@ -31,6 +31,5 @@
         android:layout_gravity="center"
         android:text="@string/random_joke"
         />
-
   </FrameLayout>
 </layout>
